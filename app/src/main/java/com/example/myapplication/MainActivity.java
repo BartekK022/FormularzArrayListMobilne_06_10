@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
@@ -47,6 +48,21 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onStopTrackingTouch(SeekBar seekBar) {
 
+                    }
+                }
+        );
+        spinnerKolor.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        String kolor = spinnerKolor.getSelectedItem().toString();
+                        if(kolor.equals("Zielony")) {
+                            textViewWynik.setTextColor(Color.parseColor("green"));
+                        } else if(kolor.equals("Niebieski")) {
+                            textViewWynik.setTextColor(Color.parseColor("blue"));
+                        } else if(kolor.equals("Czerwony")) {
+                            textViewWynik.setTextColor(Color.parseColor("red"));
+                        }
                     }
                 }
         );
