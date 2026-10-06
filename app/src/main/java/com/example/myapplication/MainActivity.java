@@ -38,13 +38,11 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         int rozmiarCzcionki = seekBarRozmiarCzcionki.getProgress();
                         textViewWynik.setTextSize(rozmiarCzcionki);
-                        int dzialanie = spinnerKolor.getSelectedItemPosition();
-                        switch (dzialanie) {
-                            case 1:
-                                textViewWynik.setTextColor(Color.parseColor("green"));
-                                break;
-                            case 2:
-                                textViewWynik.setTextColor(Color.parseColor("blue"));
+                        String color = spinnerKolor.getSelectedItem().toString();
+                        if(color.equals("Zielony")) {
+                            textViewWynik.setTextColor(Color.parseColor("green"));
+                        } else if(color.equals("Niebieski")) {
+                            textViewWynik.setTextColor(Color.parseColor("blue"));
                         }
                     }
                 }

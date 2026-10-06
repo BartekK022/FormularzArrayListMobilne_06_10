@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string-array name="dzialania">
+    <string-array name="kolory">
         <item> Zielony </item>
         <item> Niebieski </item>
     </string-array>

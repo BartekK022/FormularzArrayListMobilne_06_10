@@ -25,6 +25,7 @@
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="209dp"
+            android:entries="@array/kolory"
             android:layout_height="match_parent" />
 
     </LinearLayout>
@@ -61,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:layout_marginBottom="15dp"
-        android:textSize="50dp"
+        android:textSize="28dp"
         android:text="Przykładowt tekst" />
 
 </LinearLayout>
