@@ -32,21 +32,43 @@ public class MainActivity extends AppCompatActivity {
         buttonZamien= findViewById(R.id.button);
         textViewWynik= findViewById(R.id.textView2);
 
-        buttonZamien.setOnClickListener(
-                new View.OnClickListener() {
+        seekBarRozmiarCzcionki.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
                     @Override
-                    public void onClick(View view) {
-                        int rozmiarCzcionki = seekBarRozmiarCzcionki.getProgress();
-                        textViewWynik.setTextSize(rozmiarCzcionki);
-                        String color = spinnerKolor.getSelectedItem().toString();
-                        if(color.equals("Zielony")) {
-                            textViewWynik.setTextColor(Color.parseColor("green"));
-                        } else if(color.equals("Niebieski")) {
-                            textViewWynik.setTextColor(Color.parseColor("blue"));
-                        }
+                    public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                        textViewWynik.setTextSize(Float.parseFloat(String.valueOf(i)));
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
                     }
                 }
         );
+
+
+//        buttonZamien.setOnClickListener(
+//                new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        int rozmiarCzcionki = seekBarRozmiarCzcionki.getProgress();
+//                        textViewWynik.setTextSize(rozmiarCzcionki);
+//                        String color = spinnerKolor.getSelectedItem().toString();
+//                        if(color.equals("Zielony")) {
+//                            textViewWynik.setTextColor(Color.parseColor("green"));
+//                        } else if(color.equals("Niebieski")) {
+//                            textViewWynik.setTextColor(Color.parseColor("blue"));
+//                        } else if(color.equals("Czerwony")) {
+//                            textViewWynik.setTextColor(Color.parseColor("red"));
+//                        }
+//                    }
+//                }
+//        );
 
 
     }

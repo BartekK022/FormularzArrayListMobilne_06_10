@@ -3,5 +3,6 @@
     <string-array name="kolory">
         <item> Zielony </item>
         <item> Niebieski </item>
+        <item> Czerwony </item>
     </string-array>
 </resources>
