@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-        spinnerKolor.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
+        spinnerKolor.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
                     @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                         String kolor = spinnerKolor.getSelectedItem().toString();
                         if(kolor.equals("Zielony")) {
                             textViewWynik.setTextColor(Color.parseColor("green"));
@@ -64,8 +64,28 @@ public class MainActivity extends AppCompatActivity {
                             textViewWynik.setTextColor(Color.parseColor("red"));
                         }
                     }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
                 }
         );
+//        spinnerKolor.setOnItemClickListener(
+//                new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                        String kolor = spinnerKolor.getSelectedItem().toString();
+//                        if(kolor.equals("Zielony")) {
+//                            textViewWynik.setTextColor(Color.parseColor("green"));
+//                        } else if(kolor.equals("Niebieski")) {
+//                            textViewWynik.setTextColor(Color.parseColor("blue"));
+//                        } else if(kolor.equals("Czerwony")) {
+//                            textViewWynik.setTextColor(Color.parseColor("red"));
+//                        }
+//                    }
+//                }
+//        );
 
 
 //        buttonZamien.setOnClickListener(
